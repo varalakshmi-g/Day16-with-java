@@ -1,8 +1,10 @@
 # Day16-with-java
 
-Today I have practiced and learned how to write a program to print the index of an element present in an array. 
+Today I have practiced and learned below programs . 
 
 Lets go to the code.....
+
+#1st program to print the index of an element present in an array
 
 Here I assumed the number to find out the index is K.
 
@@ -110,3 +112,45 @@ array elements: 1 4 5 2 7 3
 sum of max values: 15
 sum of min values: 21
 
+
+#3 rd program to find the product of N-1 elements in an array
+
+import java.util.Scanner;
+public class Day16 {
+    
+    static int[] productOfN_1(int[] ar)
+    {
+        int p = 1;
+        for (int i = 0; i < ar.length; i++) {
+            p = p*ar[i];
+        }
+        int[] res = new int [ar.length];
+        for (int i = 0; i < res.length; i++) 
+        {
+            res[i] = p/ar[i];
+        }
+        return res;
+        
+    }
+    
+     public static void main(String[] args) {
+         Scanner scan = new Scanner(System.in);
+         int n = scan.nextInt();
+         int[] ar = new int[n];
+         for (int i = 0; i < ar.length; i++)
+         {
+             ar[i] = scan.nextInt();
+             
+         }
+         int[] result = productOfN_1(ar);
+         for (int i = 0; i < result.length; i++)
+         {
+             System.out.print(result[i] + " ");
+         }
+     }
+}
+ 
+out put : 
+Array size: 5
+Array elements: 1 2 4 5 6
+product of n-1: 240 120 60 48 40
